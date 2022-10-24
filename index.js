@@ -8,6 +8,9 @@ const courses = require('./data/courses.json');
 app.get('/', (req, res) => {
     res.send('learn programming server is running');
 });
+app.get('/course-categories', (req, res) => {
+    res.send(learnPrograming);
+});
 app.listen(port, () => {
     console.log(`learn programming is running on port,${port}`);
 })
