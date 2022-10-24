@@ -3,7 +3,8 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(cors());
-
+const learnPrograming = require('./data/learnPrograming.json');
+const courses = require('./data/courses.json');
 app.get('/', (req, res) => {
     res.send('learn programming server is running');
 });
