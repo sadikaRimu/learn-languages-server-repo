@@ -11,6 +11,11 @@ app.get('/', (req, res) => {
 app.get('/course-categories', (req, res) => {
     res.send(learnPrograming);
 });
+app.get('/courses/:id', (req, res) => {
+    const id = req.params.id;
+    const selectedCourses = courses.find(c => c._id === id);
+    res.send(selectedCourses);
+});
 app.listen(port, () => {
     console.log(`learn programming is running on port,${port}`);
 })
