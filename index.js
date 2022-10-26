@@ -16,6 +16,17 @@ app.get('/courses/:id', (req, res) => {
     const selectedCourses = courses.find(c => c._id === id);
     res.send(selectedCourses);
 });
+app.get('/category/:id', (req, res) => {
+    const id = req.params.id;
+    // if (id === '08') {
+    //     res.send(news);
+    // }
+    // else {
+    const selectCategoryNews = courses.filter(c => c.category_id === id);
+    res.send(selectCategoryNews);
+    // }
+
+})
 app.get('/courses', (req, res) => {
     res.send(courses);
 });
